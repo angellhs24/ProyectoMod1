@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Podología Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para la sección Nosotros */
+        .nosotros-hero {
+            padding-top: 150px;
+            background: #D4C5B9; /* Beige de tu paleta */
+            text-align: center;
+            padding-bottom: 60px;
+        }
+
+        .nosotros-hero h1 {
+            color: #2C3E2E;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Efecto de sombra beige detrás de la foto como en tu imagen */
+        .about-image::after {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            background: #D4C5B9;
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            color: #8B9D83;
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .mission-vision {
+            background: #f9f9f9;
+            padding: 60px 0;
+            margin-top: 50px;
+            border-radius: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .about-image::after { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="navbar" class="scrolled">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">PODOLOGÍA<span>PROFESIONAL</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#contacto" class="btn btn-primary">Agendar Cita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="nosotros-hero">
+        <div class="container">
+            <h1>Nuestra Historia y Compromiso</h1>
+            <p>Más de una década cuidando la salud de tus pies con excelencia médica.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80" alt="Nuestro Equipo">
+                </div>
+                <div class="about-text">
+                    <h2>Pasión por la Podología</h2>
+                    <p>En <strong>Podología Profesional</strong>, entendemos que tus pies son el motor de tu día a día. Lo que comenzó hace 15 años como un pequeño consultorio, hoy es un centro de referencia en salud podológica.</p>
+                    <p>Nuestro equipo médico combina años de experiencia clínica con un enfoque cálido y acogedor, utilizando tecnología de última generación para ofrecerte soluciones definitivas a tus problemas de pisada y salud ungueal.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>+15</h3>
+                            <p>Años de Experiencia</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>10k</h3>
+                            <p>Pacientes Felices</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Compromiso</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mission-vision">
+                <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <div>
+                        <h3>Nuestra Misión</h3>
+                        <p>Brindar atención podológica integral de alta calidad, mejorando la movilidad y calidad de vida de nuestros pacientes mediante diagnósticos precisos y tratamientos humanos.</p>
+                    </div>
+                    <div>
+                        <h3>Nuestra Visión</h3>
+                        <p>Ser el centro podológico líder en innovación tecnológica y calidez humana, siendo reconocidos por nuestra ética profesional y resultados clínicos satisfactorios.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html#contacto" class="btn btn-primary">¡Quiero agendar mi primera consulta!</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #2C3E2E; color: white; padding: 40px 0; text-align: center;">
+        <p>&copy; 2026 Podología Profesional. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

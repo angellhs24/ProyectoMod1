@@ -150,3 +150,10 @@ nav {
     justify-content: center;
     cursor: pointer;
 }
+
+.map-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px; /* Para que las esquinas sean redondeadas como tus tarjetas */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra suave para que resalte */
+}
