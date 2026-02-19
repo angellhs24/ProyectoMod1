@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiropodía Avanzada | Podología Profesional</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .service-header {
+            padding-top: 150px;
+            background: var(--beige);
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+        .content-detail {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .benefit-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .benefit-list li i {
+            color: var(--verde-suave);
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="navbar" class="scrolled">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">PODOLOGÍA<span>PROFESIONAL</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="#contacto" class="btn btn-primary">Agendar Cita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="service-header">
+        <div class="container">
+            <h1>Quiropodía Integral</h1>
+            <p>Salud preventiva y tratamiento profesional para tus pies.</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="content-detail">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80"
+                        alt="Quiropodía" class="service-image">
+
+                    <h2>¿Qué es la Quiropodía?</h2>
+                    <p>La quiropodía es el tratamiento podológico por excelencia. No se trata solo de un aspecto
+                        estético, sino de una intervención clínica necesaria para prevenir infecciones y dolencias
+                        mayores en el futuro.</p>
+
+                    <h3 style="margin-top: 30px;">Nuestro tratamiento incluye:</h3>
+                    <ul class="benefit-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>Corte y fresado de uñas:</strong> Evita la
+                            onicocriptosis (uñas encarnadas).</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Delaminación de hiperqueratosis:</strong>
+                            Eliminación de durezas acumuladas.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Tratamiento de helomas:</strong> Extracción de
+                            "ojos de gallo" o callos profundos.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Hidratación profunda:</strong> Masaje
+                            terapéutico con cremas de urea.</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar">
+                    <div class="contact-form" style="position: sticky; top: 120px;">
+                        <h3>Solicitar Información</h3>
+                        <p>¿Tienes dudas sobre este tratamiento?</p>
+                        <form id="appointmentForm">
+                            <input type="text" placeholder="Tu nombre"
+                                style="width:100%; margin-bottom:10px; padding:10px;">
+                            <input type="tel" placeholder="Teléfono"
+                                style="width:100%; margin-bottom:10px; padding:10px;">
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar consulta</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
