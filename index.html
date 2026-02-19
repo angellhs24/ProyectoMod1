@@ -1,11 +1,670 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Podología Profesional - Especialistas en salud podológica, estudio de la pisada y pie diabético.">
+    <meta name="keywords" content="podología, salud pies, plantillas, quiropodía, pie diabético, láser podológico">
+    <title>Podología Profesional | Salud y Bienestar para tus Pies</title>
+
+    <meta property="og:title" content="Podología Profesional">
+    <meta property="og:description" content="Cuidado integral para tus pies con tecnología avanzada y atención personalizada.">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --verde-suave: #8B9D83;
+            --beige: #D4C5B9;
+            --marron-calido: #A67C52;
+            --blanco: #FFFFFF;
+            --gris-oscuro: #2C3E2E;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--gris-oscuro);
+            background-color: var(--blanco);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* --- UTILIDADES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--verde-suave);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--marron-calido);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--verde-suave);
+            color: var(--verde-suave);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--verde-suave);
+            color: white;
+        }
+
+        /* --- NAVBAR --- */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 20px 0;
+        }
+
+        header.scrolled {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--verde-suave);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gris-oscuro);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--marron-calido);
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* --- HERO --- */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(rgba(44, 62, 46, 0.6), rgba(44, 62, 46, 0.6)), 
+                        url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* --- SERVICIOS --- */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--verde-suave);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--verde-suave);
+            margin-bottom: 20px;
+        }
+
+        /* --- PROCESO --- */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .process-step {
+            position: relative;
+            padding: 20px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--verde-suave);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: 700;
+        }
+
+        /* --- TESTIMONIOS --- */
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-item {
+            min-width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        /* --- CONTACTO --- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-form {
+            background: #fdfdfd;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--gris-oscuro);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        /* --- ANIMACIONES --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--marron-calido);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+
+            .burger {
+                display: block;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+
+    <header id="navbar">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">PODOLOGÍA<span>PROFESIONAL</span></a>
+                <ul class="nav-links" id="nav-menu">
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#contacto" class="btn btn-primary">Agendar Cita</a></li>
+                </ul>
+                <div class="burger" id="burger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content container">
+            <h1>Salud y bienestar en cada paso</h1>
+            <p>Especialistas en el cuidado integral de tus pies con la tecnología más avanzada y un trato humano excepcional.</p>
+            <div class="hero-btns">
+                <a href="#contacto" class="btn btn-primary">Reservar Cita</a>
+                <a href="#servicios" class="btn btn-outline" style="color: white; border-color: white;">Conocer Servicios</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="section-padding reveal">
+        <div class="container">
+            <div class="contact-wrapper" style="align-items: center;">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80" alt="Consultorio" style="width: 100%; border-radius: 20px; box-shadow: 20px 20px 0 var(--beige);">
+                </div>
+                <div>
+                    <h2 class="section-title" style="text-align: left;">Cuidamos tu caminar desde hace más de 15 años</h2>
+                    <p>En Podología Profesional, entendemos que tus pies son el motor de tu día a día. Nuestro equipo médico combina experiencia clínica con un enfoque cálido y acogedor para ofrecerte soluciones definitivas.</p>
+                    <br>
+                    <p><strong>+15 Años de experiencia</strong> garantizando la salud de miles de pacientes satisfechos.</p>
+                    <br>
+                    <a href="#servicios" class="btn btn-outline">Leer más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="section-padding reveal" style="background: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-foot"></i>
+                    <h3>Quiropodía</h3>
+                    <p>Tratamiento experto de uñas encarnadas, callosidades y durezas para un alivio inmediato.</p>
+                    <a href="#" class="btn-outline btn" style="margin-top: 15px; padding: 8px 20px;">Más información</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-running"></i>
+                    <h3>Podología Deportiva</h3>
+                    <p>Estudio biomecánico de la pisada y plantillas personalizadas para mejorar tu rendimiento.</p>
+                    <a href="#" class="btn-outline btn" style="margin-top: 15px; padding: 8px 20px;">Más información</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-magic"></i>
+                    <h3>Tratamiento Láser</h3>
+                    <p>Tecnología avanzada para la eliminación de hongos (onicomicosis) y verrugas plantares.</p>
+                    <a href="#" class="btn-outline btn" style="margin-top: 15px; padding: 8px 20px;">Más información</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Pie Diabético</h3>
+                    <p>Cuidado preventivo y tratamientos especializados para evitar complicaciones graves.</p>
+                    <a href="#" class="btn-outline btn" style="margin-top: 15px; padding: 8px 20px;">Más información</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-child"></i>
+                    <h3>Podología Infantil</h3>
+                    <p>Detección temprana y corrección de problemas de marcha en los más pequeños.</p>
+                    <a href="#" class="btn-outline btn" style="margin-top: 15px; padding: 8px 20px;">Más información</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-walking"></i>
+                    <h3>Biomecánica</h3>
+                    <p>Análisis exhaustivo de la marcha para prevenir lesiones futuras en rodillas y espalda.</p>
+                    <a href="#" class="btn-outline btn" style="margin-top: 15px; padding: 8px 20px;">Más información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding reveal">
+        <div class="container">
+            <h2 class="section-title">Tu proceso de atención</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Cita</h4>
+                    <p>Reserva fácilmente online o por teléfono.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Diagnóstico</h4>
+                    <p>Evaluación detallada por nuestros expertos.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Tratamiento</h4>
+                    <p>Procedimientos con tecnología de punta.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Seguimiento</h4>
+                    <p>Acompañamiento hasta tu total recuperación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios" class="section-padding reveal" style="background: var(--beige);">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen nuestros pacientes</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-track" id="track">
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?u=1" alt="Paciente" class="testimonial-img">
+                        <p>"Excelente trato. Sufría de dolores al correr y con las plantillas mi vida cambió totalmente. ¡Muy recomendados!"</p>
+                        <h4>- Carlos Mendoza</h4>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?u=2" alt="Paciente" class="testimonial-img">
+                        <p>"El tratamiento láser para los hongos fue rápido y sin dolor. El consultorio es precioso y muy limpio."</p>
+                        <h4>- Lucía García</h4>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?u=3" alt="Paciente" class="testimonial-img">
+                        <p>"Atención de primera para mi padre diabético. Tienen una paciencia y profesionalidad admirables."</p>
+                        <h4>- Roberto Pérez</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section-padding reveal">
+        <div class="container">
+            <h2 class="section-title">Agenda tu consulta</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Ubicación y Horarios</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Bienestar 123, Ciudad Salud</p>
+                    <p><i class="fas fa-phone"></i> +34 900 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@podologiaprofesional.com</p>
+                    <br>
+                    <h4>Horarios:</h4>
+                    <p>Lunes - Viernes: 09:00 - 20:00</p>
+                    <p>Sábados: 10:00 - 14:00</p>
+                    <br>
+                    <div style="width: 100%; height: 250px; background: #eee; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <span>[Mapa de Google Maps]</span>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Teléfono" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="4" placeholder="Motivo de consulta"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Solicitud</button>
+                    </form>
+                    <div id="formSuccess" style="display:none; color: green; margin-top: 15px; text-align: center;">
+                        <i class="fas fa-check-circle"></i> ¡Mensaje enviado con éxito! Nos contactaremos pronto.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Podología Profesional</h3>
+                    <p>Cuidando tus pies, mejoramos tu vida.</p>
+                    <div class="social-links" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Links rápidos</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="#hero" style="color: white; text-decoration: none;">Inicio</a></li>
+                        <li><a href="#servicios" style="color: white; text-decoration: none;">Servicios</a></li>
+                        <li><a href="#contacto" style="color: white; text-decoration: none;">Citas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Newsletter</h4>
+                    <p>Recibe consejos de salud en tu email.</p>
+                    <input type="email" placeholder="Tu email" style="padding: 8px; margin-top: 10px; border-radius: 5px; border: none; width: 80%;">
+                </div>
+            </div>
+            <hr style="opacity: 0.1;">
+            <p style="text-align: center; margin-top: 20px; font-size: 0.8rem;">&copy; 2026 Podología Profesional. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="backToTop"><i class="fas fa-chevron-up"></i></div>
+
+    <script>
+        // --- NAVBAR SCROLL EFFECT ---
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+                backToTop.style.display = 'flex';
+            } else {
+                header.classList.remove('scrolled');
+                backToTop.style.display = 'none';
+            }
+        });
+
+        // --- MOBILE MENU ---
+        const burger = document.getElementById('burger');
+        const navMenu = document.getElementById('nav-menu');
+
+        burger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Cerrar menu al clickear un link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // --- TESTIMONIAL SLIDER ---
+        const track = document.getElementById('track');
+        let index = 0;
+
+        function moveSlider() {
+            index++;
+            if (index > 2) index = 0;
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+        setInterval(moveSlider, 5000);
+
+        // --- REVEAL ANIMATIONS ---
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+
+        // --- FORM VALIDATION ---
+        const form = document.getElementById('appointmentForm');
+        const successMsg = document.getElementById('formSuccess');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulación de envío
+            const btn = form.querySelector('button');
+            btn.innerText = 'Enviando...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                form.reset();
+                form.style.display = 'none';
+                successMsg.style.display = 'block';
+            }, 1500);
+        });
+
+        // --- BACK TO TOP ---
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
 </body>
 </html>
