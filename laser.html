@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Servicio | Podología Profesional</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .service-header {
+            padding-top: 150px;
+            background: var(--beige);
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .benefit-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .benefit-list li i {
+            color: var(--verde-suave);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .sidebar-box {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 15px;
+            position: sticky;
+            top: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="navbar" class="scrolled">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">PODOLOGÍA<span>PROFESIONAL</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#contacto" class="btn btn-primary">Agendar Cita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="service-header">
+        <div class="container">
+            <h1 id="service-title">Tratamiento Laser</h1>
+            <p id="service-subtitle">Tecnologia de vanguardia para eliminar hongos y lesiones con precisión y sin dolor.</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="content-detail">
+                    
+                    <img src="https://img.freepik.com/foto-gratis/fisioterapia-pie-ondas-choque-acusticas-cerca_169016-41376.jpg" alt="Tratamiento láser podológico" class="service-image">
+
+                    <div id="service-description">
+                        <h2>Tecnología Láser de Última Generación</h2>
+                        <p>Olvídate de tratamientos químicos agresivos o cremas que no funcionan. El láser es el método
+                            más eficaz y rápido para patologías persistentes en la piel y uñas.</p>
+
+                        <h3 style="margin-top:20px;">Aplicaciones principales:</h3>
+                        <ul class="benefit-list">
+                            <li><i class="fas fa-virus-slash"></i> <strong>Onicomicosis:</strong> El calor del láser
+                                elimina los hongos de las uñas de forma definitiva en pocas sesiones.</li>
+                            <li><i class="fas fa-band-aid"></i> <strong>Verrugas y Papilomas:</strong> Eliminación
+                                precisa sin cirugía y con recuperación inmediata.</li>
+                            <li><i class="fas fa-fire-alt"></i> <strong>Efecto Térmico:</strong> Estimula la
+                                regeneración del tejido sano de manera natural.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="sidebar-box">
+                        <h3>Reserva tu consulta</h3>
+                        <p>No dejes pasar más tiempo, tus pies son tu base.</p>
+                        <a href="index.html#contacto" class="btn btn-primary"
+                            style="width: 100%; text-align: center; margin-top: 15px;">Solicitar Cita</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
